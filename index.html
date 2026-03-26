@@ -91,8 +91,8 @@
     </div>
 
     <!-- Auth Screen -->
-    <div id="auth-screen" class="flex flex-col items-center justify-center p-6 hide fade-in bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 fixed inset-0 z-50">
-        <div class="bg-white/80 backdrop-blur-xl p-8 rounded-3xl shadow-xl shadow-emerald-100/50 text-center w-full max-w-sm border border-white/50">
+    <div id="auth-screen" class="flex flex-col items-center justify-center p-6 hide fade-in bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 fixed inset-0 z-50 overflow-y-auto">
+        <div class="bg-white/80 backdrop-blur-xl p-8 rounded-3xl shadow-xl shadow-emerald-100/50 text-center w-full max-w-sm border border-white/50 my-auto">
             
             <div class="relative w-20 h-20 mx-auto mb-6">
                 <div class="absolute inset-0 bg-gradient-to-tr from-emerald-400 to-teal-300 rounded-2xl rotate-6 opacity-50 blur-lg animate-pulse"></div>
@@ -1008,8 +1008,7 @@
         if (!res.ok) {
             throw new Error('validate_failed');
         }
-        const data = await res.json();
-        return Boolean(data && data.valid);
+        return await res.json();
     }
 
     wechatQrImage.addEventListener('error', () => {
@@ -1083,17 +1082,24 @@
     unlockBtn.addEventListener('click', async () => {
         const code = normalizeAuthCode(authCodeInput.value);
         if (!code) {
-            alert('请输入授权码后再解密报告');
+            alert('请输入授权码');
             return;
         }
+        
         unlockBtn.disabled = true;
+        unlockBtn.innerHTML = '校验中...';
+
         try {
-            const valid = await validateAuthCode(code);
-            if (valid) {
+            const data = await validateAuthCode(code);
+            if (data && data.valid) {
                 authScreen.classList.add('hide');
                 resultScreen.classList.remove('hide');
             } else {
-                alert('授权码未通过校验，请检查后重试');
+                if (data && data.expired) {
+                    alert('该授权码已超过24小时有效期，请重新获取');
+                } else {
+                    alert('授权码未通过校验，请检查后重试');
+                }
                 authCodeInput.value = '';
                 authCodeInput.focus();
             }
@@ -1101,6 +1107,7 @@
             alert('授权服务暂时不可用，请稍后再试');
         } finally {
             unlockBtn.disabled = false;
+            unlockBtn.innerHTML = '立即解锁报告';
         }
     });
 
@@ -1300,13 +1307,16 @@
             const canvas = await html2canvas(poster, {
                 scale: 2,
                 useCORS: true,
+                allowTaint: true,
                 backgroundColor: '#f8fafc',
                 windowWidth: poster.scrollWidth,
                 windowHeight: poster.scrollHeight,
                 width: poster.scrollWidth,
                 height: poster.scrollHeight,
-                scrollX: -window.scrollX,
-                scrollY: -window.scrollY
+                scrollX: 0,
+                scrollY: 0,
+                x: 0,
+                y: 0
             });
             
             const image = canvas.toDataURL('image/png');
