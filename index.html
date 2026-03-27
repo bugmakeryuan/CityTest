@@ -27,7 +27,6 @@
 
 <div id="app" class="max-w-md mx-auto min-h-screen relative flex flex-col">
     
-    <!-- Home Screen -->
     <div id="home-screen" class="flex-1 flex flex-col items-center justify-center p-6 fade-in">
         <div class="bg-white/60 backdrop-blur-xl p-8 rounded-3xl shadow-xl shadow-emerald-100/50 text-center w-full border border-white/50">
             
@@ -48,7 +47,6 @@
         </div>
     </div>
 
-    <!-- Profile Screen -->
     <div id="profile-screen" class="flex-1 flex flex-col items-center justify-center p-6 hide fade-in">
         <div class="bg-white/70 backdrop-blur-xl p-8 rounded-3xl shadow-xl shadow-emerald-100/50 text-center w-full border border-white/50">
             <h2 class="text-xl font-bold text-slate-800 mb-2">解锁你的隐藏坐标</h2>
@@ -64,7 +62,6 @@
         </div>
     </div>
 
-    <!-- Question Screen -->
     <div id="question-screen" class="flex-1 flex flex-col p-6 hide fade-in">
         <div class="flex items-center justify-between mb-4">
             <button id="prev-btn" class="text-slate-400 hover:text-emerald-600 transition-colors flex items-center gap-1 text-sm font-medium hide">
@@ -82,16 +79,14 @@
         </div>
 
         <div id="options-container" class="flex flex-col gap-3 transition-opacity duration-200">
-            <!-- Options will be injected here -->
-        </div>
+            </div>
         <div class="mt-6 text-center text-slate-400 text-xs">
             官方测试网址：
             <a href="https://www.206288.xyz/" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:text-emerald-700">https://www.206288.xyz/</a>
         </div>
     </div>
 
-    <!-- Auth Screen -->
-    <div id="auth-screen" class="flex flex-col items-center justify-center p-6 hide fade-in bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 fixed inset-0 z-50 overflow-y-auto">
+    <div id="auth-screen" class="flex flex-col items-center py-10 px-6 hide fade-in bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 fixed inset-0 z-50 overflow-y-auto">
         <div class="bg-white/80 backdrop-blur-xl p-8 rounded-3xl shadow-xl shadow-emerald-100/50 text-center w-full max-w-sm border border-white/50 my-auto">
             
             <div class="relative w-20 h-20 mx-auto mb-6">
@@ -129,43 +124,42 @@
         </div>
     </div>
 
-    <!-- Result Screen -->
     <div id="result-screen" class="flex-1 flex flex-col hide fade-in pb-24">
-        <!-- Poster Area -->
         <div id="poster" class="bg-gradient-to-b from-emerald-50 to-teal-50 p-6 min-h-screen">
-            <!-- Top Match -->
             <div class="bg-white rounded-3xl p-6 shadow-xl shadow-emerald-100/50 border border-white/50 mb-6 relative overflow-hidden">
                 <div class="absolute top-0 right-0 bg-gradient-to-r from-emerald-500 to-teal-500 text-white text-xs font-bold px-4 py-2 rounded-bl-2xl z-10">
                     TOP MATCH
                 </div>
                 <div class="text-center mt-4 mb-6">
                     <div class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-500 to-teal-500 font-black text-6xl mb-2" id="top-match-percent">99%</div>
-                    <div class="text-slate-400 text-sm font-medium tracking-widest uppercase mb-4">契合度</div>
+                    
+                    <div class="text-slate-400 text-sm font-medium tracking-widest uppercase mb-1">契合度</div>
+                    
                     <h2 class="text-4xl font-bold text-slate-800 mb-2" id="top-match-city">城市名</h2>
-                    <div class="inline-block bg-teal-100 text-teal-600 px-4 py-1.5 rounded-full text-lg font-bold mb-2" id="top-match-title">人设头衔</div>
+                    
+                    <div class="inline-block bg-teal-100 text-teal-600 px-4 py-1.5 rounded-full text-lg font-bold mb-6" id="top-match-title">人设头衔</div>
+                    
                     <div id="top-match-zodiac" class="text-slate-500 text-sm mb-6">星座：未知</div>
                     
-                    <div class="flex flex-wrap justify-center gap-2 mb-4" id="top-match-user-tags"></div>
-                    <div class="flex flex-wrap justify-center gap-2 mb-6" id="top-match-city-tags"></div>
+                    <div class="text-center mb-4" id="top-match-user-tags"></div>
+                    <div class="text-center mb-6" id="top-match-city-tags"></div>
                     
                     <div class="bg-slate-50 p-5 rounded-2xl text-left mb-4">
-                        <h4 class="font-bold text-slate-800 mb-2 flex items-center gap-2"><span class="text-emerald-500">✨</span> 为什么适合你</h4>
-                        <p class="text-slate-600 text-sm leading-relaxed" id="top-match-reason"></p>
+                        <h4 class="font-bold text-slate-800 mb-3 flex items-center gap-2"><span class="text-emerald-500">✨</span> 为什么适合你</h4>
+                        <div class="text-slate-600 text-sm leading-relaxed" id="top-match-reason"></div>
                     </div>
                     
                     <div class="bg-red-50 p-5 rounded-2xl text-left">
-                        <h4 class="font-bold text-red-800 mb-2 flex items-center gap-2"><span class="text-red-500">⚡</span> 避雷指南</h4>
-                        <p class="text-red-600/80 text-sm leading-relaxed mb-3" id="top-match-avoid-type"></p>
-                        <div class="flex flex-wrap gap-2" id="top-match-avoid-cities"></div>
+                        <h4 class="font-bold text-red-800 mb-3 flex items-center gap-2"><span class="text-red-500">⚡</span> 避雷指南</h4>
+                        <div class="text-red-600 text-sm leading-relaxed mb-4" id="top-match-avoid-type"></div>
+                        <div class="block" id="top-match-avoid-cities"></div>
                     </div>
                 </div>
             </div>
 
-            <!-- Runner Ups -->
             <h3 class="text-lg font-bold text-slate-800 mb-4 px-2">平行宇宙里的高契合城市</h3>
             <div id="runner-ups-container" class="flex flex-col gap-4">
-                <!-- Runner ups will be injected here -->
-            </div>
+                </div>
             
             <div class="text-center mt-8 text-slate-400 text-xs">
                 测试结果仅供娱乐 · 寻找最适合你的中国城市
@@ -175,7 +169,6 @@
             </div>
         </div>
         
-        <!-- Floating Action Button -->
         <div class="fixed bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-white via-white/80 to-transparent flex justify-center max-w-md mx-auto gap-3">
             <button id="save-btn" class="flex-1 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold py-4 px-4 rounded-2xl shadow-xl shadow-emerald-200 transition-all active:scale-95 flex items-center justify-center gap-2 text-sm">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
@@ -195,209 +188,6 @@
     // 题库数据
     // ==========================================
     const questions = [
-  {
-    "id": 1,
-    "text": "突然被拉进一个名为‘相亲相爱一家人’的群，你的第一反应是：",
-    "options": [
-      { "text": "🔕 马上开启消息免打扰，假装没看见", "scores": { "type_1": 0, "type_2": 0, "type_3": 0, "type_4": 10 } },
-      { "text": "🧧 发个‘恭喜发财’的表情包，然后潜水", "scores": { "type_1": 10, "type_2": 0, "type_3": 0, "type_4": 0 } },
-      { "text": "👋 热情地跟七大姑八大姨打招呼，顺便问晚上吃啥", "scores": { "type_1": 0, "type_2": 0, "type_3": 10, "type_4": 0 } },
-      { "text": "🏃‍♂️ 默默退群，然后把手机扔到一边去睡觉", "scores": { "type_1": 0, "type_2": 10, "type_3": 0, "type_4": 0 } }
-    ]
-  },
-  {
-    "id": 2,
-    "text": "如果让你拥有一种超能力，你最想要：",
-    "options": [
-      { "text": "💰 每天自动进账一万元，但必须每天工作8小时", "scores": { "type_1": 10, "type_2": 0, "type_3": 0, "type_4": 0 } },
-      { "text": "🏝️ 瞬间移动到任何一个没人的海岛", "scores": { "type_1": 0, "type_2": 10, "type_3": 0, "type_4": 0 } },
-      { "text": "🍔 永远吃不胖，且能尝遍天下美食", "scores": { "type_1": 0, "type_2": 0, "type_3": 10, "type_4": 0 } },
-      { "text": "🔮 能看透别人的心思，找到真正的灵魂伴侣", "scores": { "type_1": 0, "type_2": 0, "type_3": 0, "type_4": 10 } }
-    ]
-  },
-  {
-    "id": 3,
-    "text": "周末的晚上，你最理想的度过方式是：",
-    "options": [
-      { "text": "🏢 在高级写字楼里加班，看着窗外车水马龙，感觉离财富自由又近了一步", "scores": { "type_1": 10, "type_2": 0, "type_3": 0, "type_4": 0 } },
-      { "text": "🛋️ 裹着毯子在沙发上刷剧，旁边放着肥宅快乐水", "scores": { "type_1": 0, "type_2": 10, "type_3": 0, "type_4": 0 } },
-      { "text": "🍻 约上三五好友去大排档撸串喝酒，大声吹牛", "scores": { "type_1": 0, "type_2": 0, "type_3": 10, "type_4": 0 } },
-      { "text": "🎬 参加一个小众的独立电影放映会，和导演深度交流", "scores": { "type_1": 0, "type_2": 0, "type_3": 0, "type_4": 10 } }
-    ]
-  },
-  {
-    "id": 4,
-    "text": "你的手机里哪个App使用时间最长？",
-    "options": [
-      { "text": "📈 搞钱软件（股票、理财、工作群）", "scores": { "type_1": 10, "type_2": 0, "type_3": 0, "type_4": 0 } },
-      { "text": "🐈 种草软件（看风景、看萌宠、看别人躺平）", "scores": { "type_1": 0, "type_2": 10, "type_3": 0, "type_4": 0 } },
-      { "text": "🍜 外卖/点评软件（每天都在纠结吃什么）", "scores": { "type_1": 0, "type_2": 0, "type_3": 10, "type_4": 0 } },
-      { "text": "🎧 播客/阅读软件（精神食粮不能断）", "scores": { "type_1": 0, "type_2": 0, "type_3": 0, "type_4": 10 } }
-    ]
-  },
-  {
-    "id": 5,
-    "text": "如果必须放弃一样东西，你会选择放弃：",
-    "options": [
-      { "text": "🎉 放弃所有的社交娱乐，只要能让我升职加薪", "scores": { "type_1": 10, "type_2": 0, "type_3": 0, "type_4": 0 } },
-      { "text": "💼 放弃高薪工作，只要能让我每天睡到自然醒", "scores": { "type_1": 0, "type_2": 10, "type_3": 0, "type_4": 0 } },
-      { "text": "🎭 放弃高雅的艺术追求，只要天天有火锅烤肉", "scores": { "type_1": 0, "type_2": 0, "type_3": 10, "type_4": 0 } },
-      { "text": "🏆 放弃世俗的成功，只要能保持内心的纯粹和自由", "scores": { "type_1": 0, "type_2": 0, "type_3": 0, "type_4": 10 } }
-    ]
-  },
-  {
-    "id": 6,
-    "text": "走在路上突然下起大雨，你没带伞，你会：",
-    "options": [
-      { "text": "🚕 马上打车，时间就是金钱，不能耽误接下来的行程", "scores": { "type_1": 10, "type_2": 0, "type_3": 0, "type_4": 0 } },
-      { "text": "🛖 找个屋檐躲雨，顺便发个呆，享受这意外的停顿", "scores": { "type_1": 0, "type_2": 10, "type_3": 0, "type_4": 0 } },
-      { "text": "🏪 冲进最近的便利店，买把伞顺便买个关东煮吃", "scores": { "type_1": 0, "type_2": 0, "type_3": 10, "type_4": 0 } },
-      { "text": "🌧️ 觉得这是命运的安排，在雨中漫步，感受浪漫", "scores": { "type_1": 0, "type_2": 0, "type_3": 0, "type_4": 10 } }
-    ]
-  },
-  {
-    "id": 7,
-    "text": "朋友约你出去玩，你最怕听到哪句话？",
-    "options": [
-      { "text": "📵 ‘今天随便玩，不谈工作，也不准看手机’", "scores": { "type_1": 10, "type_2": 0, "type_3": 0, "type_4": 0 } },
-      { "text": "🧗 ‘我们要去爬那座海拔两千米的山’", "scores": { "type_1": 0, "type_2": 10, "type_3": 0, "type_4": 0 } },
-      { "text": "🥗 ‘那家餐厅只有轻食和沙拉’", "scores": { "type_1": 0, "type_2": 0, "type_3": 10, "type_4": 0 } },
-      { "text": "👥 ‘会有很多你不认识的陌生人一起来’", "scores": { "type_1": 0, "type_2": 0, "type_3": 0, "type_4": 10 } }
-    ]
-  },
-  {
-    "id": 8,
-    "text": "你的衣柜里最多的是什么类型的衣服？",
-    "options": [
-      { "text": "👔 剪裁得体的西装/职业装，随时准备见客户", "scores": { "type_1": 10, "type_2": 0, "type_3": 0, "type_4": 0 } },
-      { "text": "👕 宽松舒适的棉麻家居服，怎么舒服怎么来", "scores": { "type_1": 0, "type_2": 10, "type_3": 0, "type_4": 0 } },
-      { "text": "🎽 各种耐脏好洗的T恤，方便吃火锅不溅油", "scores": { "type_1": 0, "type_2": 0, "type_3": 10, "type_4": 0 } },
-      { "text": "🧥 设计感十足的小众品牌，绝不和别人撞衫", "scores": { "type_1": 0, "type_2": 0, "type_3": 0, "type_4": 10 } }
-    ]
-  },
-  {
-    "id": 9,
-    "text": "晚上失眠了，你脑子里在想什么？",
-    "options": [
-      { "text": "📊 明天的汇报PPT还有哪里可以优化", "scores": { "type_1": 10, "type_2": 0, "type_3": 0, "type_4": 0 } },
-      { "text": "🐷 什么时候才能退休，去大理养猪", "scores": { "type_1": 0, "type_2": 10, "type_3": 0, "type_4": 0 } },
-      { "text": "🥟 明天早上吃煎饼果子还是小笼包", "scores": { "type_1": 0, "type_2": 0, "type_3": 10, "type_4": 0 } },
-      { "text": "🌌 人生的意义到底是什么，宇宙的尽头在哪里", "scores": { "type_1": 0, "type_2": 0, "type_3": 0, "type_4": 10 } }
-    ]
-  },
-  {
-    "id": 10,
-    "text": "看到朋友圈有人发了张豪车方向盘的照片，你的内心OS：",
-    "options": [
-      { "text": "🔥 ‘总有一天我也要买一辆，甚至更好的！’", "scores": { "type_1": 10, "type_2": 0, "type_3": 0, "type_4": 0 } },
-      { "text": "🛵 ‘好累啊，还是我的小电驴骑着没压力。’", "scores": { "type_1": 0, "type_2": 10, "type_3": 0, "type_4": 0 } },
-      { "text": "🛒 ‘这车空间太小，装不下我买的菜。’", "scores": { "type_1": 0, "type_2": 0, "type_3": 10, "type_4": 0 } },
-      { "text": "🎻 ‘太物质了，不如去听一场交响乐。’", "scores": { "type_1": 0, "type_2": 0, "type_3": 0, "type_4": 10 } }
-    ]
-  },
-  {
-    "id": 11,
-    "text": "你的理想居住环境是怎样的？",
-    "options": [
-      { "text": "🏙️ 核心CBD的大平层，俯瞰整个城市的繁华", "scores": { "type_1": 10, "type_2": 0, "type_3": 0, "type_4": 0 } },
-      { "text": "🏡 带有小院子的乡间别墅，种满花花草草", "scores": { "type_1": 0, "type_2": 10, "type_3": 0, "type_4": 0 } },
-      { "text": "🏮 楼下就是夜市和小吃街的老城区公寓", "scores": { "type_1": 0, "type_2": 0, "type_3": 10, "type_4": 0 } },
-      { "text": "🖼️ 充满艺术气息的Loft，墙上挂满画作", "scores": { "type_1": 0, "type_2": 0, "type_3": 0, "type_4": 10 } }
-    ]
-  },
-  {
-    "id": 12,
-    "text": "如果去相亲，你最看重对方什么？",
-    "options": [
-      { "text": "💼 经济实力和未来的发展潜力", "scores": { "type_1": 10, "type_2": 0, "type_3": 0, "type_4": 0 } },
-      { "text": "🧸 性格温和，能包容我的小脾气，不给我压力", "scores": { "type_1": 0, "type_2": 10, "type_3": 0, "type_4": 0 } },
-      { "text": "🥢 能吃到一起去，是个有趣的干饭搭子", "scores": { "type_1": 0, "type_2": 0, "type_3": 10, "type_4": 0 } },
-      { "text": "📖 三观契合，能和我聊尼采和黑格尔", "scores": { "type_1": 0, "type_2": 0, "type_3": 0, "type_4": 10 } }
-    ]
-  },
-  {
-    "id": 13,
-    "text": "遇到不顺心的事情，你通常怎么排解？",
-    "options": [
-      { "text": "💻 化悲愤为力量，疯狂工作转移注意力", "scores": { "type_1": 10, "type_2": 0, "type_3": 0, "type_4": 0 } },
-      { "text": "🛌 躺在床上蒙头大睡，睡醒了就好了", "scores": { "type_1": 0, "type_2": 10, "type_3": 0, "type_4": 0 } },
-      { "text": "🥩 叫上兄弟/闺蜜，去大吃一顿发泄一下", "scores": { "type_1": 0, "type_2": 0, "type_3": 10, "type_4": 0 } },
-      { "text": "🎨 一个人去美术馆或者听音乐会，自我疗愈", "scores": { "type_1": 0, "type_2": 0, "type_3": 0, "type_4": 10 } }
-    ]
-  },
-  {
-    "id": 14,
-    "text": "你对‘内卷’的看法是：",
-    "options": [
-      { "text": "💪 卷就卷呗，只要钱给够，我能卷死他们", "scores": { "type_1": 10, "type_2": 0, "type_3": 0, "type_4": 0 } },
-      { "text": "🥱 你们卷吧，我先躺了，保命要紧", "scores": { "type_1": 0, "type_2": 10, "type_3": 0, "type_4": 0 } },
-      { "text": "🍗 卷什么卷，不如去吃顿好的犒劳自己", "scores": { "type_1": 0, "type_2": 0, "type_3": 10, "type_4": 0 } },
-      { "text": "🧘 毫无意义的消耗，我只追求内心的丰盈", "scores": { "type_1": 0, "type_2": 0, "type_3": 0, "type_4": 10 } }
-    ]
-  },
-  {
-    "id": 15,
-    "text": "如果让你开一家店，你会开什么店？",
-    "options": [
-      { "text": "🏪 稳赚不赔的连锁加盟店，快速回本", "scores": { "type_1": 10, "type_2": 0, "type_3": 0, "type_4": 0 } },
-      { "text": "🌅 开在海边的慢节奏民宿，每天看日落", "scores": { "type_1": 0, "type_2": 10, "type_3": 0, "type_4": 0 } },
-      { "text": "🍢 充满烟火气的深夜食堂，听食客讲故事", "scores": { "type_1": 0, "type_2": 0, "type_3": 10, "type_4": 0 } },
-      { "text": "📚 卖小众书籍和黑胶唱片的独立书店", "scores": { "type_1": 0, "type_2": 0, "type_3": 0, "type_4": 10 } }
-    ]
-  },
-  {
-    "id": 16,
-    "text": "你的消费观更偏向于：",
-    "options": [
-      { "text": "📈 把钱花在刀刃上，投资自己或者买能保值的东西", "scores": { "type_1": 10, "type_2": 0, "type_3": 0, "type_4": 0 } },
-      { "text": "💆 花钱买舒服，只要能让我省事、放松就行", "scores": { "type_1": 0, "type_2": 10, "type_3": 0, "type_4": 0 } },
-      { "text": "🤤 恩格尔系数极高，大部分钱都用来吃喝玩乐了", "scores": { "type_1": 0, "type_2": 0, "type_3": 10, "type_4": 0 } },
-      { "text": "🎫 愿意为精神产品买单，比如看展、买书、听音乐会", "scores": { "type_1": 0, "type_2": 0, "type_3": 0, "type_4": 10 } }
-    ]
-  },
-  {
-    "id": 17,
-    "text": "你的办公桌/书桌通常是什么样的？",
-    "options": [
-      { "text": "🗂️ 极度整洁，只有电脑和必要的办公用品，效率至上", "scores": { "type_1": 10, "type_2": 0, "type_3": 0, "type_4": 0 } },
-      { "text": "🪴 放满了各种解压玩具、绿植和靠垫，主打一个舒适", "scores": { "type_1": 0, "type_2": 10, "type_3": 0, "type_4": 0 } },
-      { "text": "🍬 永远备着各种零食、茶包和咖啡，随时补充能量", "scores": { "type_1": 0, "type_2": 0, "type_3": 10, "type_4": 0 } },
-      { "text": "🗿 贴着喜欢的明信片，放着艺术摆件，很有个人风格", "scores": { "type_1": 0, "type_2": 0, "type_3": 0, "type_4": 10 } }
-    ]
-  },
-  {
-    "id": 18,
-    "text": "面对突如其来的假期，你更倾向于去哪里旅游？",
-    "options": [
-      { "text": "🏙️ 去一线城市考察市场，顺便看看有没有商业机会", "scores": { "type_1": 10, "type_2": 0, "type_3": 0, "type_4": 0 } },
-      { "text": "🏞️ 去一个没人认识的冷门小镇，每天睡到自然醒", "scores": { "type_1": 0, "type_2": 10, "type_3": 0, "type_4": 0 } },
-      { "text": "🌶️ 去成都、长沙这种美食之都，从早吃到晚", "scores": { "type_1": 0, "type_2": 0, "type_3": 10, "type_4": 0 } },
-      { "text": "🏛️ 去有深厚历史底蕴的古城，感受文化熏陶", "scores": { "type_1": 0, "type_2": 0, "type_3": 0, "type_4": 10 } }
-    ]
-  },
-  {
-    "id": 19,
-    "text": "你最向往的退休生活是：",
-    "options": [
-      { "text": "📊 即使退休也要继续投资理财，保持对财富的敏锐度", "scores": { "type_1": 10, "type_2": 0, "type_3": 0, "type_4": 0 } },
-      { "text": "🎣 找个山清水秀的地方，每天钓鱼、种菜、养狗", "scores": { "type_1": 0, "type_2": 10, "type_3": 0, "type_4": 0 } },
-      { "text": "🀄 每天和老朋友们打麻将、跳广场舞、喝早茶", "scores": { "type_1": 0, "type_2": 0, "type_3": 10, "type_4": 0 } },
-      { "text": "🖌️ 终于有时间写那本构思了很久的小说，或者学画画", "scores": { "type_1": 0, "type_2": 0, "type_3": 0, "type_4": 10 } }
-    ]
-  },
-  {
-    "id": 20,
-    "text": "选一个词来形容你理想中的城市：",
-    "options": [
-      { "text": "🚀 充满机遇、快节奏、搞钱圣地", "scores": { "type_1": 10, "type_2": 0, "type_3": 0, "type_4": 0 } },
-      { "text": "🍃 慵懒、治愈、慢生活、宜居", "scores": { "type_1": 0, "type_2": 10, "type_3": 0, "type_4": 0 } },
-      { "text": "🍻 热闹、好吃、接地气、人情味", "scores": { "type_1": 0, "type_2": 0, "type_3": 10, "type_4": 0 } },
-      { "text": "🎭 文艺、包容、有腔调、精神家园", "scores": { "type_1": 0, "type_2": 0, "type_3": 0, "type_4": 10 } }
-    ]
-  }
-];
-
-    const refreshedQuestions = [
   {
     "id": 1,
     "text": "突然有了个长假，第一天早上醒来：",
@@ -443,7 +233,7 @@
     "text": "选一个地方散步，你更偏爱：",
     "options": [
       { "text": "☕ 梧桐树下的精致咖啡街区", "scores": { "type_1": 5, "type_2": 0, "type_3": 0, "type_4": 10 } },
-      { "text": "🌊 视野开阔、风很大的江海边", "scores": { "type_1": 10, "type_2": 5, "type_3": 0, "type_4": 0 } },
+      { "text": "🌊 视野开阔、风复杂的江海边", "scores": { "type_1": 10, "type_2": 5, "type_3": 0, "type_4": 0 } },
       { "text": "🧱 充满历史底蕴的红墙古城", "scores": { "type_1": 0, "type_2": 0, "type_3": 5, "type_4": 10 } },
       { "text": "🌲 郁郁葱葱、空气湿润的山林", "scores": { "type_1": 0, "type_2": 10, "type_3": 5, "type_4": 0 } }
     ]
@@ -599,7 +389,6 @@
     ]
   }
 ];
-    questions.splice(0, questions.length, ...refreshedQuestions);
 
     const cityResults = {
   "type_1_type_4": {
@@ -662,7 +451,7 @@
       { "city": "厦门", "tags": ["海上花园", "文艺清新", "慢享生活"], "desc": "用海风治愈职场内卷的鹭岛，既有特区的商业活力，又有让人瞬间松弛的文艺氛围。" },
       { "city": "威海", "tags": ["雪窝子", "绝美海岸", "宜居天花板"], "desc": "干净到让人忘记烦恼的北方海滨，适合在北方打拼但极度渴望宁静与治愈的灵魂。" },
       { "city": "烟台", "tags": ["仙境海岸", "葡萄酒城", "鲁菜之乡"], "desc": "喝着红酒吹海风的微醺之城，产业发达且生活安逸，能完美平衡你的野心与疲惫。" },
-      { "city": "大连", "tags": ["浪漫之都", "海鲜自由", "北方明珠"], "desc": "自带异国情调的北方避暑胜地，让你在北方也能享受到海滨城市的浪漫与松弛。" },
+      { "city": "大连", "tags": ["浪漫之都", "广场文化", "海鲜大排档"], "desc": "自带异国情调的北方避暑胜地，让你在北方也能享受到海滨城市的浪漫与松弛。" },
       { "city": "宁波", "tags": ["书藏古今", "港通天下", "隐形富豪"], "desc": "在东海之滨闷声发大财，既有硬核的港口经济，又有东钱湖畔的宁静致远。" },
       { "city": "舟山", "tags": ["海天佛国", "千岛之城", "海鲜大排档"], "desc": "在海岛上寻找内心的宁静，适合在长三角打拼、周末需要去海岛彻底放空的你。" },
       { "city": "海口", "tags": ["椰城风情", "慢节奏", "阳光沙滩"], "desc": "没有冬天只有椰林的避世特区，让你在温暖的阳光下卸下所有职场防备。" }
@@ -768,7 +557,7 @@
     },
     "runnerUps": [
       { "city": "重庆", "tags": ["8D魔幻", "雾都夜话", "赛博朋克"], "desc": "在魔幻地貌里吃最辣的火锅，这座城市的江湖气和拼搏精神能让你彻底释放野心。" },
-      { "city": "武汉", "tags": ["九省通衢", "过早文化", "江城江湖"], "desc": "端着热干面边走边吃的江湖气，适合性格直爽、做事雷厉风行且热爱市井生活的你。" },
+      { "city": "武汉", "tags": ["九省通衢", "过早文化", "江城江湖"], "desc": "端着热干面边走边吃的江湖气，高校林立且产业发达，适合充满朝气与野心的文化人。" },
       { "city": "南昌", "tags": ["英雄城", "拌粉瓦罐汤", "赣江风光"], "desc": "吃着拌粉搞事业的低调省会，这里的人们骨子里有着不服输的韧劲和对生活的热爱。" },
       { "city": "贵阳", "tags": ["避暑之都", "爽爽贵阳", "折耳根狂热"], "desc": "夏天不用开空调的吃货天堂，让你在享受清凉和美食的同时，也能抓住西南发展机遇。" },
       { "city": "合肥", "tags": ["霸都崛起", "科技创新", "淮军故里"], "desc": "在科技大厂旁吃地锅鸡的霸都，完美融合了硬核的科技野心与极具爆发力的市井文化。" },
@@ -1000,11 +789,18 @@
     }
 
     async function validateAuthCode(code) {
+        const storageKey = `device_id_${code}`;
+        const savedDeviceId = localStorage.getItem(storageKey);
+
         const res = await fetch(AUTH_VALIDATE_API, {
             method: 'POST',
             headers: {'content-type': 'application/json'},
-            body: JSON.stringify({code})
+            body: JSON.stringify({
+                code: code,
+                deviceId: savedDeviceId
+            })
         });
+        
         if (!res.ok) {
             throw new Error('validate_failed');
         }
@@ -1061,14 +857,12 @@
 
     prevBtn.addEventListener('click', () => {
         if (currentQuestionIndex > 0) {
-            // Revert scores
             const lastScores = scoreHistory.pop();
             for (const key in lastScores) {
                 scores[key] -= lastScores[key];
             }
             currentQuestionIndex--;
             
-            // Smooth transition
             optionsContainer.style.opacity = '0';
             questionText.style.opacity = '0';
             setTimeout(() => {
@@ -1091,15 +885,23 @@
 
         try {
             const data = await validateAuthCode(code);
+            
             if (data && data.valid) {
+                if (data.deviceId) {
+                    localStorage.setItem(`device_id_${code}`, data.deviceId);
+                }
+                
                 authScreen.classList.add('hide');
                 resultScreen.classList.remove('hide');
             } else {
-                if (data && data.expired) {
+                if (data && data.error === 'device_mismatch') {
+                    alert('抱歉，该授权码已在其他设备或浏览器上激活，禁止共享。');
+                } else if (data && data.expired) {
                     alert('该授权码已超过24小时有效期，请重新获取');
                 } else {
                     alert('授权码未通过校验，请检查后重试');
                 }
+                
                 authCodeInput.value = '';
                 authCodeInput.focus();
             }
@@ -1134,7 +936,6 @@
             labelSpan.textContent = `${labels[index]}.`;
             
             const textSpan = document.createElement('span');
-            // Remove emojis at the start of the option text
             textSpan.textContent = opt.text.replace(/^[\uD800-\uDBFF][\uDC00-\uDFFF]\s*/, '').replace(/^[^\u4e00-\u9fa5a-zA-Z0-9]+/, '').trim();
             
             btn.appendChild(labelSpan);
@@ -1146,7 +947,6 @@
     }
 
     function handleOptionClick(optionScores) {
-        // Add scores
         for (const key in optionScores) {
             scores[key] += optionScores[key];
         }
@@ -1155,7 +955,6 @@
         currentQuestionIndex++;
         
         if (currentQuestionIndex < questions.length) {
-            // Smooth transition
             optionsContainer.style.opacity = '0';
             questionText.style.opacity = '0';
             setTimeout(() => {
@@ -1187,12 +986,10 @@
         
         let resultKey = `${top1}_${top2}`;
         
-        // Fallback if exact key doesn't exist (e.g. tie breakers might cause reverse order)
         if (!cityResults[resultKey]) {
             resultKey = `${top2}_${top1}`;
         }
         
-        // If still not found, fallback to the first available result
         const resultData = cityResults[resultKey] || Object.values(cityResults)[0];
         
         renderResult(resultData);
@@ -1202,10 +999,8 @@
         const topMatch = data.topMatch;
         const runnerUps = data.runnerUps;
 
-        // Generate dynamic percentages
-        let currentPercent = Math.floor(Math.random() * 5) + 95; // 95 to 99
+        let currentPercent = Math.floor(Math.random() * 5) + 95; 
         
-        // Render Top Match
         document.getElementById('top-match-percent').textContent = `${currentPercent}%`;
         document.getElementById('top-match-city').textContent = topMatch.city;
         document.getElementById('top-match-title').textContent = topMatch.title;
@@ -1216,48 +1011,45 @@
         const mbtiTrait = mbtiInfo.trait || '人格倾向稳定';
         document.getElementById('top-match-reason').textContent = `${topMatch.reason} 同时，你的${birthdayInfo.zodiac}${zodiacTrait}，以及${mbtiInfo.code}的${mbtiTrait}，与这座城市的气质和生活方式形成了额外共振，这也是匹配度更高的重要原因之一。`;
 
+        // --- 排版修复 ---
+        const createTag = (text, bgClass, textClass) => {
+            const span = document.createElement('span');
+            span.className = `inline-block px-3 py-1.5 ${bgClass} ${textClass} rounded-full text-xs font-medium m-1`;
+            span.textContent = text;
+            return span;
+        };
+
         const userTagsContainer = document.getElementById('top-match-user-tags');
         userTagsContainer.innerHTML = '';
         if (birthdayInfo.zodiac) {
-            const zodiacSpan = document.createElement('span');
-            zodiacSpan.className = 'px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-medium';
-            zodiacSpan.textContent = `星座：${birthdayInfo.zodiac}`;
-            userTagsContainer.appendChild(zodiacSpan);
+            userTagsContainer.appendChild(createTag(`星座：${birthdayInfo.zodiac}`, 'bg-emerald-50', 'text-emerald-600'));
         }
         if (mbtiInfo.code) {
-            const mbtiSpan = document.createElement('span');
-            mbtiSpan.className = 'px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-medium';
-            mbtiSpan.textContent = `MBTI：${mbtiInfo.code}`;
-            userTagsContainer.appendChild(mbtiSpan);
+            userTagsContainer.appendChild(createTag(`MBTI：${mbtiInfo.code}`, 'bg-emerald-50', 'text-emerald-600'));
         }
         topMatch.userTags.forEach(tag => {
-            const span = document.createElement('span');
-            span.className = 'px-3 py-1 bg-emerald-50 text-emerald-600 rounded-full text-xs font-medium';
-            span.textContent = tag;
-            userTagsContainer.appendChild(span);
+            userTagsContainer.appendChild(createTag(tag, 'bg-emerald-50', 'text-emerald-600'));
         });
 
         const cityTagsContainer = document.getElementById('top-match-city-tags');
         cityTagsContainer.innerHTML = '';
         topMatch.cityTags.forEach(tag => {
-            const span = document.createElement('span');
-            span.className = 'px-3 py-1 bg-teal-50 text-teal-600 rounded-full text-xs font-medium';
-            span.textContent = tag;
-            cityTagsContainer.appendChild(span);
+            cityTagsContainer.appendChild(createTag(tag, 'bg-teal-50', 'text-teal-600'));
         });
         
-        document.getElementById('top-match-avoid-type').textContent = `⚠️ ${topMatch.avoidType}`;
+        // --- 表情和文本排版修复 ---
+        document.getElementById('top-match-avoid-type').innerHTML = `<span class="inline-block mr-1">⚠️</span>${topMatch.avoidType}`;
         const avoidCitiesContainer = document.getElementById('top-match-avoid-cities');
         avoidCitiesContainer.innerHTML = topMatch.avoidCities.map(city => 
-            `<span class="bg-red-100 text-red-700 px-3 py-1 rounded-full text-xs font-medium">${city}</span>`
+            `<span class="inline-block bg-red-100 text-red-700 px-3 py-1.5 rounded-full text-xs font-medium mr-2 mb-2">${city}</span>`
         ).join('');
 
-        // Render Runner Ups
+        // --- 城市列表排版修复 ---
         const runnerUpsContainer = document.getElementById('runner-ups-container');
         runnerUpsContainer.innerHTML = '';
         
         runnerUps.forEach((city) => {
-            currentPercent -= (Math.floor(Math.random() * 3) + 1); // Decrease by 1-3
+            currentPercent -= (Math.floor(Math.random() * 3) + 1);
             
             const card = document.createElement('div');
             card.className = 'bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex flex-col gap-3';
@@ -1270,10 +1062,10 @@
             `;
             
             const tagsDiv = document.createElement('div');
-            tagsDiv.className = 'flex flex-wrap gap-1.5';
+            tagsDiv.className = 'block mt-1'; // 弃用 flex
             city.tags.forEach(tag => {
                 const t = document.createElement('span');
-                t.className = 'px-2 py-0.5 bg-slate-50 text-slate-500 rounded-md text-[10px] font-medium';
+                t.className = 'inline-block px-2 py-0.5 bg-slate-50 text-slate-500 rounded-md text-[10px] font-medium mr-1.5 mb-1.5';
                 t.textContent = tag;
                 tagsDiv.appendChild(t);
             });
@@ -1290,34 +1082,62 @@
         });
     }
 
-    // --- Screenshot Logic ---
+    // --- 修改点：在克隆体中将渐变色文字强行替换为纯色，从而解决 html2canvas 无法识别 text-clip 的 Bug ---
     saveBtn.addEventListener('click', async () => {
         const poster = document.getElementById('poster');
         const previousScrollY = window.scrollY;
         
-        // Add a small delay and loading state
         saveBtn.innerHTML = '生成中...';
         saveBtn.disabled = true;
         
         try {
-            window.scrollTo({top: 0, behavior: 'auto'});
-            // Ensure images/fonts are loaded before capturing
+            window.scrollTo({top: 0, behavior: 'instant'});
             await new Promise(resolve => setTimeout(resolve, 300));
             
-            const canvas = await html2canvas(poster, {
-                scale: 2,
+            const clone = poster.cloneNode(true);
+            
+            // ==========================================
+            // 核心修复文字隐形 Bug 的代码
+            // ==========================================
+            const percentEl = clone.querySelector('#top-match-percent');
+            if (percentEl) {
+                // 剥离会导致隐形的渐变色和透明属性
+                percentEl.classList.remove('text-transparent', 'bg-clip-text', 'bg-gradient-to-r', 'from-emerald-500', 'to-teal-500');
+                // 换成纯净的深绿色（只在截图中生效，不影响原网页的美观）
+                percentEl.classList.add('text-emerald-500'); 
+            }
+
+            // --- 克隆脱轨法排版 Bug 终极修复 ---
+            clone.style.position = 'absolute';
+            clone.style.top = '0';
+            clone.style.left = '0';
+            clone.style.zIndex = '-9999'; 
+            clone.style.width = poster.offsetWidth + 'px';
+            clone.style.height = 'max-content'; 
+            clone.style.overflow = 'visible';
+            
+            document.body.appendChild(clone);
+            
+            const realHeight = clone.scrollHeight;
+            const realWidth = clone.offsetWidth;
+
+            const canvas = await html2canvas(clone, {
+                scale: 2, 
                 useCORS: true,
                 allowTaint: true,
-                backgroundColor: '#f8fafc',
-                windowWidth: poster.scrollWidth,
-                windowHeight: poster.scrollHeight,
-                width: poster.scrollWidth,
-                height: poster.scrollHeight,
-                scrollX: 0,
+                // --- 核心排版修复 3：下方城市列表也使用 inline-block，并将背景设为极浅绿色防止白边 ---
+                backgroundColor: '#ecfdf5',
+                width: realWidth,
+                height: realHeight,
+                windowWidth: realWidth,
+                windowHeight: realHeight,
                 scrollY: 0,
+                scrollX: 0,
                 x: 0,
                 y: 0
             });
+            
+            document.body.removeChild(clone);
             
             const image = canvas.toDataURL('image/png');
             const link = document.createElement('a');
@@ -1328,7 +1148,7 @@
             console.error('Screenshot failed:', err);
             alert('海报生成失败，稍后再试一次');
         } finally {
-            window.scrollTo({top: previousScrollY, behavior: 'auto'});
+            window.scrollTo({top: previousScrollY, behavior: 'instant'});
             saveBtn.innerHTML = `
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
                 下载结果
@@ -1349,7 +1169,6 @@
             if (navigator.share) {
                 await navigator.share(shareData);
             } else {
-                // Fallback for browsers that don't support Web Share API
                 await navigator.clipboard.writeText(OFFICIAL_URL);
                 alert('链接已复制，去朋友圈/小红书晒结果吧！');
             }
