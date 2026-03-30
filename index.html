@@ -20,6 +20,12 @@
         }
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        /* Fix: Tailwind preflight sets img{display:block}, which corrupts
+           html2canvas font metrics and shifts all inline-element backgrounds.
+           Restoring inline-block fixes the rendering. (html2canvas issue #2775)
+           !important is required because Tailwind CDN injects styles dynamically
+           at runtime, overriding static <style> rules without !important. */
+        img { display: inline-block !important; }
     </style>
 </head>
 <body class="bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 min-h-screen text-slate-800 antialiased selection:bg-emerald-100">
@@ -1068,6 +1074,14 @@
         const realHeight = clone.scrollHeight;
         const realWidth = clone.offsetWidth;
 
+        // Inject a style fix right before html2canvas runs.
+        // html2canvas appends a hidden div to body for font metric measurement;
+        // if img inside it has display:block, line-height is miscalculated and
+        // all inline element backgrounds shift upward. (html2canvas issue #2775)
+        const h2cFixStyle = document.createElement('style');
+        document.head.appendChild(h2cFixStyle);
+        h2cFixStyle.sheet.insertRule('body > div:last-child img { display: inline-block !important; }', 0);
+
         const canvas = await html2canvas(clone, {
             scale: 2, 
             useCORS: true,
@@ -1084,6 +1098,7 @@
         });
         
         document.body.removeChild(clone);
+        h2cFixStyle.remove();
         return canvas.toDataURL('image/png');
     }
 
