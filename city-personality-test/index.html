@@ -87,7 +87,7 @@
             </div>
         <div class="mt-6 text-center text-slate-400 text-xs">
             官方测试网址：
-            <a href="https://www.206288.xyz/" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:text-emerald-700">https://www.206288.xyz/</a>
+            <a href="https://www.206288.xyz/city-personality-test/" target="_blank" rel="noopener noreferrer" class="text-emerald-600 hover:text-emerald-700">https://www.206288.xyz/city-personality-test/</a>
         </div>
     </div>
 
@@ -170,21 +170,27 @@
                 测试结果仅供娱乐 · 寻找最适合你的中国城市
             </div>
             <div class="text-center mt-1 text-slate-400 text-xs">
-                官方测试网址：https://www.206288.xyz/
+                官方测试网址：https://www.206288.xyz/city-personality-test/
             </div>
         </div>
         
-        <div class="fixed bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-white via-white/80 to-transparent flex justify-center max-w-md mx-auto gap-3">
-            <button id="save-btn" class="flex-1 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold py-4 px-4 rounded-2xl shadow-xl shadow-emerald-200 transition-all active:scale-95 flex items-center justify-center gap-2 text-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
-                保存本地
-            </button>
-            <button id="share-btn" class="flex-1 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-semibold py-4 px-4 rounded-2xl shadow-xl shadow-emerald-200 transition-all active:scale-95 flex items-center justify-center gap-2 text-sm">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
-                分享给朋友
-            </button>
+        <div class="fixed bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-white via-white/95 to-transparent flex flex-col items-center max-w-md mx-auto gap-3">
+            
+            <a href="/" class="flex items-center justify-center gap-1.5 text-emerald-600 font-bold text-sm hover:text-emerald-700 bg-white/90 px-5 py-2.5 rounded-full shadow-md shadow-emerald-100/50 border border-emerald-100 transition-all active:scale-95 w-full text-center">
+                ✨ 测完了？点击返回大厅，发现更多隐藏测试
+            </a>
+
+            <div class="flex justify-center w-full gap-3">
+                <button id="save-btn" class="flex-1 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white font-semibold py-4 px-4 rounded-2xl shadow-xl shadow-emerald-200 transition-all active:scale-95 flex items-center justify-center gap-2 text-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                    保存本地
+                </button>
+                <button id="share-btn" class="flex-1 bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-600 hover:to-teal-600 text-white font-semibold py-4 px-4 rounded-2xl shadow-xl shadow-emerald-200 transition-all active:scale-95 flex items-center justify-center gap-2 text-sm">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                    分享给朋友
+                </button>
+            </div>
         </div>
-    </div>
 
     <div id="share-image-overlay" class="fixed inset-0 z-[10000] bg-black/90 hide flex flex-col items-center justify-center p-6 opacity-0 transition-opacity duration-300">
         <div class="text-white text-sm mb-4 bg-white/20 px-5 py-2.5 rounded-full backdrop-blur-md border border-white/30 animate-bounce flex items-center gap-2">
@@ -707,7 +713,7 @@
     const saveBtn = document.getElementById('save-btn');
     const shareBtn = document.getElementById('share-btn');
     const OFFICIAL_URL = 'https://www.206288.xyz/';
-    const AUTH_VALIDATE_API = 'https://api.206288.xyz/validate';
+    const AUTH_VALIDATE_API = '/city-personality-test/validate';
 
     let birthdayInfo = { month: null, day: null, zodiac: '' };
     let mbtiInfo = { code: '', trait: '' };
@@ -1132,7 +1138,7 @@
                 await navigator.share({
                     title: '最适合你的中国城市测试',
                     text: `我测出了我的天选之城是【${cityName}】！快来测测你最适合哪座城市 👇`,
-                    url: 'https://www.206288.xyz/'
+                    url: 'https://www.206288.xyz/city-personality-test/'
                 });
             } catch (err) {
                 if (err.name !== 'AbortError') {
