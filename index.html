@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>P博士的自我探索实验室</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -10,69 +10,56 @@
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             -webkit-font-smoothing: antialiased;
         }
+        /* 确保背景渐变充满整个屏幕 */
+        .bg-custom-gradient {
+            background: linear-gradient(135deg, #ecfdf5 0%, #f0fdfa 50%, #ffffff 100%);
+        }
     </style>
 </head>
-<body class="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50/50 to-white text-slate-800 selection:bg-emerald-200">
+<body class="h-screen w-screen overflow-hidden bg-custom-gradient text-slate-800 flex flex-col selection:bg-emerald-200">
     
-    <div class="max-w-3xl mx-auto px-6 py-16 md:py-24">
+    <header class="w-full pt-12 md:pt-16 flex justify-center fade-in">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-20 h-20 md:w-24 md:h-24 drop-shadow-md transition-transform duration-500 hover:scale-105">
+            <defs>
+                <linearGradient id="emeraldTeal" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#10b981" /> <stop offset="100%" stop-color="#0d9488" /> </linearGradient>
+            </defs>
+            <circle cx="50" cy="50" r="44" fill="none" stroke="url(#emeraldTeal)" stroke-width="2" stroke-dasharray="4 6"/>
+            <circle cx="50" cy="50" r="38" fill="none" stroke="#0d9488" stroke-width="1" opacity="0.4"/>
+            <path d="M50 12 L58 50 L50 88 L42 50 Z" fill="url(#emeraldTeal)"/>
+            <path d="M50 12 L58 50 L50 50 Z" fill="#0f766e" opacity="0.6"/>
+            <path d="M12 50 L50 58 L88 50 L50 42 Z" fill="#34d399" opacity="0.8"/>
+            <circle cx="50" cy="50" r="5" fill="#ffffff" stroke="#0f766e" stroke-width="2"/>
+        </svg>
+    </header>
+
+    <main class="flex-1 flex flex-col justify-center items-center px-6 text-center z-10 w-full max-w-lg mx-auto">
         
-        <header class="text-center mb-16 fade-in">
-            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-gradient-to-tr from-emerald-100 to-teal-100 text-emerald-600 mb-6 shadow-sm border border-emerald-50">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-                    <circle cx="12" cy="12" r="10" stroke-opacity="0.3"/>
-                    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" fill="currentColor" fill-opacity="0.1"/>
-                    <line x1="12" y1="2" x2="12" y2="4"/>
-                    <line x1="12" y1="20" x2="12" y2="22"/>
-                    <line x1="2" y1="12" x2="4" y2="12"/>
-                    <line x1="20" y1="12" x2="22" y2="12"/>
-                </svg>
-            </div>
-            <h1 class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-700 to-teal-600 mb-4 tracking-tight">
-                P博士的自我探索实验室
-            </h1>
-            <p class="text-slate-500 text-base md:text-lg max-w-lg mx-auto leading-relaxed">
-                用科学的量表与工具，帮你看见隐藏的天赋与人格。
-            </p>
-        </header>
+        <h1 class="text-3xl md:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-emerald-700 to-teal-600 mb-4 tracking-tight">
+            P博士的自我探索实验室
+        </h1>
+        
+        <p class="text-slate-500 text-base md:text-lg mb-10 leading-relaxed px-4">
+            用科学的量表工具，看见隐藏的天赋与人格。
+        </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            
-            <a href="/city-personality-test/" class="group block bg-white rounded-3xl p-7 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 border border-emerald-100/50 relative overflow-hidden">
-                <div class="absolute -right-8 -top-8 w-32 h-32 bg-gradient-to-br from-emerald-100 to-teal-50 rounded-full blur-2xl group-hover:bg-emerald-200 transition-colors opacity-70"></div>
+        <a href="/city-personality-test/" class="group relative inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 font-bold text-white transition-all duration-200 bg-gradient-to-r from-emerald-500 to-teal-600 rounded-full shadow-lg shadow-emerald-200 hover:shadow-xl hover:-translate-y-1 hover:from-emerald-600 hover:to-teal-700 active:scale-95">
+            <span class="mr-2 text-lg">👉</span>
+            进入测试：城市人格诊断
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
 
-                <div class="relative z-10">
-                    <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-emerald-50 to-teal-50 flex items-center justify-center mb-5 text-emerald-600 group-hover:scale-110 transition-transform duration-300 shadow-sm border border-emerald-100/50">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 10v11a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-11"/><path d="M2 10l10-7 10 7"/><path d="M10 22v-8h4v8"/></svg>
-                    </div>
-                    <h2 class="text-xl font-bold text-slate-800 mb-3 group-hover:text-emerald-700 transition-colors">
-                        测测你是哪种城市人格
-                    </h2>
-                    <p class="text-slate-500 text-sm leading-relaxed mb-8">
-                        如果你是一座城市，你会是哪座？通过生活态度与价值观测量，遇见与你灵魂共振的城市图景。
-                    </p>
-                    <div class="flex items-center text-sm font-bold text-emerald-600 group-hover:text-emerald-700">
-                        立即开始测试
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                    </div>
-                </div>
-            </a>
-
-            <div class="group block bg-slate-50/50 rounded-3xl p-7 border-2 border-dashed border-slate-200 relative overflow-hidden flex flex-col justify-center items-center text-center opacity-80 select-none">
-                <div class="w-12 h-12 rounded-2xl bg-slate-100 flex items-center justify-center mb-4 text-slate-400">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20"/><path d="M2 12h20"/></svg>
-                </div>
-                <h2 class="text-base font-semibold text-slate-500 mb-2">更多专属测试研发中</h2>
-                <p class="text-slate-400 text-sm">深度天赋潜能 / 心理年龄测试<br>即将上线，敬请期待</p>
-            </div>
-
+        <div class="mt-8 text-sm text-slate-400 flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            更多专业心理测评即将上线
         </div>
+    </main>
 
-        <footer class="mt-24 text-center">
-            <p class="text-slate-400 text-sm">
-                © 2026 人间清醒P博士. All rights reserved.
-            </p>
-        </footer>
-    </div>
+    <footer class="w-full pb-8 pt-4 flex flex-col items-center justify-center text-center">
+        <p class="text-slate-400 text-xs">
+            © 2026 人间清醒P博士. All rights reserved.
+        </p>
+    </footer>
 
 </body>
 </html>
